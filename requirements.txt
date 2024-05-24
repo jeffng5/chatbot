@@ -66,3 +66,4 @@ scipy
 openai
 pathlib
 envs
+gunicorn
