@@ -65,5 +65,4 @@ wavio
 scipy
 openai
 pathlib
-libportaudio-dev
 gunicorn
