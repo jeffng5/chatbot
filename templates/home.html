@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+
+{%block content%}
+<h1>Please to meet you. My name is Sam. I am your personal sidekick. To start, please tell me more about yourself.</h1>
+
+
+<div class= 'form'>
+<form action='/sidekick' id='user_form'>
+   {{ form.hidden_tag() }}
+
+   {% for field in form if field.widget.input_type != 'hidden' %}
+   {% for error in field.errors %}
+     <span class="text-danger">{{ error }}</span>
+   {% endfor %}
+
+<div class='cell'>
+  <span class = 'textbox'> {{ field(placeholder=field.label.text, class="form-control") }}</span>
+</div>
+ {% endfor %}
+ <button class = 'bttn-1'>Submit</button>
+</form>
+</div>
+
+
+
+{%endblock%}
+</body>
+</html>

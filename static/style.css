@@ -1,0 +1,62 @@
+body {
+    background-color: black;
+}
+
+.form {
+
+    text-align: center;
+    margin-left: 40%;
+    padding-bottom: 20px;
+}
+.cell {
+    margin-bottom: 30px;
+}
+
+#name, #age, #likes, #sex, #likes, #interests {
+    width: 40%;
+    
+} 
+
+h1 {
+    margin-top: 80px;
+    text-align: center;
+    color: white;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-bottom: 50px;
+}
+
+.bttn {
+    margin-left: 50%;
+    text-align: center;
+    width: 100px;
+    height: 130px;
+    border-radius: 50px;
+    background-color: red;
+    color: white;
+    border-radius: 8px;
+}
+
+.bttn-1 {
+    display: block;
+    margin-left: 150px;
+    text-align: center;
+    width: 100px;
+    height: 30px;
+    border-radius: 50px;
+    background-color: red;
+    color: white;
+    border-radius: 8px;
+}
+
+h4 {
+
+    color: white;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.textbox {
+    font-size: 25px;
+}
