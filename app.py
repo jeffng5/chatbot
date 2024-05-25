@@ -25,6 +25,8 @@ def home():
         sex= form.sex.data
         likes= form.likes.data
         interests = form.interests.data
+        
+        print("Hi `${name}`!")
 
     return render_template('home.html', form=form)
 
