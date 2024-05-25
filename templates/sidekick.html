@@ -3,18 +3,22 @@
 
 
 {%block content%}
-<h1>Hi there, as your sidekick, I am here to assist, accompany, and converse with you on your daily life. Please tell me,
-    {{question}}
+<h1>Hi there, as your sidekick, I am here to assist, accompany, and converse with you on your daily life. 
+</h1>
+    <h1 class='question'>
+        {{question}}
 </h1>
 
 
 
-<h4>{{reply}}</h4>
-<h4>{{answer}}</h4>
+<h4 class='reply'>{{reply}}</h4>
+<h4 class='answer'>{{answer}}</h4>
 
 <form action='/conversation'>
-<button class='bttn'>ENTER to START RECORDING</button>
+<button class='bttn'>CLICK to START RECORDING</button>
 </form>
 
 
 {%endblock%}
+
+<script src = './static/sidekick.js'></script>
