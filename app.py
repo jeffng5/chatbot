@@ -18,7 +18,7 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = "it's a secret"
 
-@app.route('/', methods =['GET', 'POST'])
+@app.route('/', methods =['GET'])
 def home():
     form = BioForm()
     if form.validate_on_submit():
