@@ -7,18 +7,16 @@ from openai import OpenAI
 import sounddevice as sd
 from scipy.io.wavfile import write
 import wavio as wv
-from envs import env
+import os
 from playsound import playsound
 from pathlib import Path
 
-
-# print(env('API_KEY'))
 
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = "it's a secret"
 
-@app.route('/')
+@app.route('/', methods =['GET', 'POST'])
 def home():
     form = BioForm()
     if form.validate_on_submit():
