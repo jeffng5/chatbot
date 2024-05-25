@@ -35,11 +35,11 @@ def home():
 @app.route('/sidekick', methods = ['GET'])
 def intro():
     starter = {
-    1: "how are you?",
-    2: "what is your mood today?",
-    3: "how is your day going?",
-    4: "do you have any questions for me?",
-    5: "what is on your mind?"
+    1: "How are you?",
+    2: "What is your mood today?",
+    3: "How is your day going?",
+    4: "Do you have any questions for me?",
+    5: "What is on your mind?"
 }
     list1 = [1,2,3,4,5]
     num = random.choice(list1)
