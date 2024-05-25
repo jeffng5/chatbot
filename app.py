@@ -7,10 +7,12 @@ from openai import OpenAI
 import sounddevice as sd
 from scipy.io.wavfile import write
 import wavio as wv
+from dotenv import load_dotenv
 import os
 from playsound import playsound
 from pathlib import Path
 
+load_dotenv()
 
 app = Flask(__name__)
 
@@ -80,7 +82,7 @@ def sidekick():
     record()
     
 #STEP 2 transcribing your audio file into text format    
-    client = OpenAI(api_key = 'sk-proj-cBud2OD12T1i7x6d7UiAT3BlbkFJ0f5q9sH9htWwH7ExeNab')
+    client = OpenAI(api_key=os.environ['API_KEY'])
 
     audio_file = open("/Users/Spare/Chatbot/jeffrey.wav", "rb")
     transcription = client.audio.transcriptions.create(
