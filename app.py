@@ -75,7 +75,7 @@ def sidekick():
         # using wavio to save the recording in .wav format
         # This will convert the NumPy array to an audio
         # file with the given sampling frequency
-        wv.write("jeffrey.wav", recording, frequency, sampwidth=2)
+        wv.write("jeffrey.wav", recording, frequency, samplewidth=2)
        
         return (print('DONE'))
 
