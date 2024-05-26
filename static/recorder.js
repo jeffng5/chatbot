@@ -9,7 +9,7 @@ async function startRecording() {
     console.log(mediaRecorder)
     const audioChunks = [];
 
-    recordButton.textContent = 'Stopped Recording';
+    recordButton.textContent = 'Record';
     recordButton.addEventListener('click', () => {mediaRecorder.stop()});
     
     mediaRecorder.ondataavailable = (event) => {
