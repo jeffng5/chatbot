@@ -1,12 +1,7 @@
-from flask import Flask, render_template, request, flash, redirect, session, url_for, g
-import requests, json
-from playsound import playsound 
+from flask import Flask, render_template, request, redirect, session, url_for 
 from forms import BioForm
 import random
 from openai import OpenAI
-import sounddevice as sd
-from scipy.io.wavfile import write
-import wavio as wv
 from dotenv import load_dotenv
 import os
 from pathlib import Path

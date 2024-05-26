@@ -60,7 +60,6 @@ wcwidth==0.2.12
 weasel==0.3.4
 Werkzeug==0.16.1
 WTForms==2.2.1
-playsound
 openai
 gunicorn
 python-dotenv
