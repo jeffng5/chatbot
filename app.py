@@ -52,7 +52,7 @@ def intro():
 
     
     return render_template('sidekick.html', question=question,
-    response = response, transcription = transcription)
+    response = response, transcription = transcription, responseURL=responseURL)
   
 
 
@@ -113,7 +113,7 @@ def sidekick():
         
      
        
-        playsound(responsePath)
+        # playsound(responsePath)
     record()
     return redirect('sidekick')
     
