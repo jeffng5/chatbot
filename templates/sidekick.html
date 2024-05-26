@@ -1,6 +1,6 @@
 {% extends 'base.html'%}
 
-
+<meta http-equiv="refresh" content="1"/>
 
 {%block content%}
 <h1>Hi there, as your sidekick, I am here to assist, accompany, and converse with you on your daily life. Please tell me,
@@ -16,12 +16,13 @@
 <h4 class='ans'>{{response}}</h4>
 
 <center>
-<audio controls>
-    <source src= '{{responseURL}}' type='audio/mpeg'> 
+<audio controls autoplay>
+    <source src= {{responseURL}} type='audio/mpeg'> 
 </audio>
 </center>
 
 {% endif %}
+
 
 <center>
 <button id="record-btn" class="bttn">Click to Start Recording</button>

@@ -2,10 +2,10 @@ body {
     background-color: black;
 }
 
-.form {
-
+#user-form {
+    font-family: 'Arial';
+    font-size: 40px;
     text-align: center;
-    margin-left: 40%;
     padding-bottom: 20px;
 }
 .cell {
@@ -18,6 +18,8 @@ body {
 } 
 
 h1 {
+    font-family: Arial;
+    font-weight: 300;
     margin-top: 80px;
     text-align: center;
     color: white;

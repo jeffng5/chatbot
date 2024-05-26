@@ -33,27 +33,27 @@ def home():
     return render_template('home.html', form=form)
 
 
-@app.route('/sidekick', methods=['GET'])
+@app.route('/sidekick')
 def intro():
+
+   
     starter = {
-        1: "How are you?",
-        2: "What is your mood today?",
-        3: "How is your day going?",
-        4: "Do you have any questions for me?",
-        5: "What is on your mind?"
-    }
+    1: "How are you?",
+    2: "What is your mood today?",
+    3: "How is your day going?",
+    4: "Do you have any questions for me?",
+    5: "What is on your mind?"
+        }
     list1 = [1, 2, 3, 4, 5]
     num = random.choice(list1)
     question = starter[num]
 
-    response = session.get('response', None)
-    transcription = session.get('transcription', None)
-    responseURL = session.get('responseURL', None)
-
     
-    return render_template('sidekick.html', question=question,
-    response = response, transcription = transcription, responseURL=responseURL)
-  
+    transcription = session.get('transcription', None)
+    response = session.get('responseText', None)
+    responseURL = session.get('responseURL', None)
+        
+    return render_template('sidekick.html', question=question, response=response, responseURL = responseURL, transcription=transcription)
 
 
 @app.route('/conversation', methods=['POST'])
@@ -103,20 +103,16 @@ def sidekick():
     #STEP 5 playing the audio file
     ################################
   
-    
-        # session["responseURL"] = url_for("static", filename="speech.mp3")
-        responseURL = "./static/speech.mp3"
-        session['responseURL'] = responsePath
-        session["response"] = responseText
-        session["transcription"] = transcription
-    
+        session.pop('responseURL', None)
         
-     
-       
-        # playsound(responsePath)
-    record()
-    return redirect('sidekick')
+        session['responseURL'] = responsePath
+        session['transcription'] =transcription
+        session['responseText'] = responseText
+
     
+    record()
+
+    return redirect('/sidekick')
     
 
         
