@@ -6,7 +6,7 @@ async function startRecording() {
   try {
     const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
     const mediaRecorder = new MediaRecorder(stream);
-    console.log(mediaRecorder)
+  
     const audioChunks = [];
 
     recordButton.textContent = 'Record';
