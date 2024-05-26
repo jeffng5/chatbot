@@ -1,3 +1,6 @@
+@media (max-width: 900px) {
+ 
+ 
 body {
     background-color: black;
 }
@@ -65,4 +68,6 @@ h4 {
 
 .textbox {
     font-size: 25px;
+}
+
 }
