@@ -15,6 +15,20 @@ async function startRecording() {
 
     
     recordButton.addEventListener('click', () => {mediaRecorder.stop(); changeButton()});
+
+    function waitingForResponse() {  
+      let wait = document.getElementById('error')
+      if (wait.textContent= ' ' ) {
+        wait.textContent = 'Waiting for Sam...'
+    
+      } else {
+        wait.textContent = 'none'
+      }
+    }
+    
+    if (recordButton.textContent == 'Stopped') {
+      waitingForResponse()
+    }
     
     mediaRecorder.ondataavailable = (event) => {
       audioChunks.push(event.data);
@@ -32,12 +46,18 @@ async function startRecording() {
         });
 
         if (response.ok) {
+          let msg = document.getElementById('error')
+          msg.textContent = 'Audio uploaded successfully!'
           console.log('Audio uploaded successfully!');
           window.location.reload();
         } else {
+          let msg = document.getElementById('error')
+          msg.textContent = `${response.statusText}`
           console.error('Error uploading audio:', response.statusText);
         }
       } catch (error) {
+        let msg = document.getElementById('error')
+        msg.textContent = `${error}`
         console.error('Error uploading audio:', error);
       } finally {
         recordButton.textContent = 'Record';
@@ -50,23 +70,13 @@ async function startRecording() {
    
 
   } catch (error) {
+    let msg = document.getElementById('error')
+    msg.textContent = `${error}`
     console.error('Error accessing microphone:', error);
   }
 }
 
-function waitingForResponse() {  
-  let wait = document.getElementById('wait')
-  if (wait.style.display === 'none') {
-    wait.style.display = 'block'
-    wait.style.color= 'white'
-  } else {
-    wait.style.display = 'none'
-  }
-}
 
-if (recordButton.textContent == 'Stopped') {
-  waitingForResponse()
-}
 
 
 recordButton.addEventListener('click', startRecording);
