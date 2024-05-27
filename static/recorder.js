@@ -9,8 +9,11 @@ async function startRecording() {
   
     const audioChunks = [];
 
-    recordButton.textContent = 'Record';
-    recordButton.addEventListener('click', () => {mediaRecorder.stop()});
+    function changeButton() {
+      recordButton.style.backgroundColor='red'; recordButton.textContent = 'Record';
+    }
+    
+    recordButton.addEventListener('click', () => {mediaRecorder.stop(); changeButton()});
     
     mediaRecorder.ondataavailable = (event) => {
       audioChunks.push(event.data);
@@ -43,6 +46,7 @@ async function startRecording() {
     };
 
     mediaRecorder.start();
+   
 
   } catch (error) {
     console.error('Error accessing microphone:', error);
