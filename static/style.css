@@ -7,12 +7,12 @@ body {
 
 #user-form {
     font-family: 'Arial';
-    font-size: 40px;
+    font-size: 20px;
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 .cell {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 #name, #age, #likes, #sex, #likes, #interests {
@@ -23,51 +23,51 @@ body {
 h1 {
     font-family: Arial;
     font-weight: 300;
-    margin-top: 80px;
+    margin-top: 10px;
     text-align: center;
     color: white;
-    margin-left: 250px;
-    margin-right: 250px;
-    margin-bottom: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
 }
 
 .bttn {
 
     text-align: center;
-    width: 100px;
-    height: 130px;
-    border-radius: 50px;
+    width: 10%;
+    height: 15px;
+    border-radius: 4px;
     background-color: red;
     color: white;
-    border-radius: 8px;
+
 }
 
 .bttn-1 {
     display: block;
-    margin-left: 150px;
+    margin-left: 10px;
     text-align: center;
-    width: 100px;
-    height: 30px;
-    border-radius: 50px;
+    width: 10%;
+    height: 15px;
+    
     background-color: red;
     color: white;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 h4 {
 
     color: white;
-    margin-bottom: 20px;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .ans {
-    margin-left: 205px;
+    margin-left: 30px;
 }
 
 .textbox {
-    font-size: 25px;
+    font-size: 10px;
 }
 
 }
