@@ -10,7 +10,7 @@ async function startRecording() {
     const audioChunks = [];
 
     function changeButton() {
-      recordButton.style.backgroundColor='red'; recordButton.textContent = 'Record';
+      recordButton.style.backgroundColor='red'; recordButton.textContent = 'Stopped';
     }
     
     recordButton.addEventListener('click', () => {mediaRecorder.stop(); changeButton()});
