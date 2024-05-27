@@ -10,8 +10,9 @@ async function startRecording() {
     const audioChunks = [];
 
     function changeButton() {
-      recordButton.style.backgroundColor='red'; recordButton.textContent = 'Stopped';
-    }
+      recordButton.style.backgroundColor='red'; recordButton.textContent = 'Stopped'; }
+
+
     
     recordButton.addEventListener('click', () => {mediaRecorder.stop(); changeButton()});
     
@@ -52,6 +53,21 @@ async function startRecording() {
     console.error('Error accessing microphone:', error);
   }
 }
+
+function waitingForResponse() {  
+  let wait = document.getElementById('wait')
+  if (wait.style.display === 'none') {
+    wait.style.display = 'block'
+    wait.style.color= 'white'
+  } else {
+    wait.style.display = 'none'
+  }
+}
+
+if (recordButton.textContent == 'Stopped') {
+  waitingForResponse()
+}
+
 
 recordButton.addEventListener('click', startRecording);
   

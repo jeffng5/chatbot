@@ -148,3 +148,8 @@ h4 {
 .textbox {
     font-size: 25px;
 }
+
+#wait {
+    color: white;
+    display: none;
+}
