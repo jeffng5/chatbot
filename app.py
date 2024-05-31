@@ -67,7 +67,7 @@ def sidekick():
         print('STOPPED')
         recording.save(recordingPath)
 
-    #STEP 2 transcribing your audio file into text format
+    #STEP 2 transcribing your audio file into text format and using ChatGPT api
     ################################
         client = OpenAI(api_key=os.environ['API_KEY'])
 
@@ -95,7 +95,7 @@ def sidekick():
                                           input=responseText)
         response.stream_to_file(responsePath)
 
-    #STEP 5 playing the audio file
+    #STEP 5 saving audio file in sessions
     ################################
   
         session.pop('responseURL', None)
