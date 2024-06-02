@@ -3,7 +3,7 @@ from forms import BioForm
 import random
 from openai import OpenAI
 from dotenv import load_dotenv
-import os
+import os, sys
 from pathlib import Path
 import time
 
@@ -48,6 +48,19 @@ def intro():
     transcription = session.get('transcription', None)
     response = session.get('responseText', None)
     responseURL = session.get('responseURL', None)
+    
+    directory = "./static/speech/"
+    now = time.time()
+    for filename in os.listdir(directory):
+        f = filename[0:-4]
+        if float(f) < float(now - 7 * 86400):
+            print('so far, so good')
+            
+            os.remove(os.path.join(directory, filename))
+            print('successfully erased!')
+        else:
+            print('You reached the end')
+
     
         
     return render_template('sidekick.html', question=question, response=response, responseURL = responseURL, transcription=transcription)
