@@ -5,6 +5,7 @@ from openai import OpenAI
 from dotenv import load_dotenv
 import os
 from pathlib import Path
+import time
 
 load_dotenv()
 
@@ -47,6 +48,7 @@ def intro():
     transcription = session.get('transcription', None)
     response = session.get('responseText', None)
     responseURL = session.get('responseURL', None)
+    
         
     return render_template('sidekick.html', question=question, response=response, responseURL = responseURL, transcription=transcription)
 
@@ -81,15 +83,15 @@ def sidekick():
 
     # STEP 3 fetching a response with your transcription from ChatGPT
     ################################
-        completion = client.chat.completions.create(model="gpt-4o", messages=[{"role": "user",                 "content": transcription}])
+        completion = client.chat.completions.create(model="gpt-4o", messages=[{"role": "user", "content": transcription}])
         completion = completion.choices[0].message
         responseText = completion.content
         print(responseText)
 
-    #STEP 4 turning your response into a audio file
+    #STEP 4 turning your response into an audio file
     ################################
 
-        responsePath = "./static/speech.mp3"
+        responsePath = f"./static/speech/{time.time()}.mp3"
         response = client.audio.speech.create(model='tts-1',
                                           voice='alloy',
                                           input=responseText)
@@ -104,9 +106,8 @@ def sidekick():
         session['transcription'] =transcription
         session['responseText'] = responseText
 
-    
     record()
-
+            
     return redirect('/sidekick')
     
 

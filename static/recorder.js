@@ -13,7 +13,6 @@ async function startRecording() {
       recordButton.style.backgroundColor='red'; recordButton.textContent = 'Stopped'; }
 
 
-    
     recordButton.addEventListener('click', () => {mediaRecorder.stop(); changeButton()});
 
     function waitingForResponse() {  
@@ -60,14 +59,13 @@ async function startRecording() {
         msg.textContent = `${error}`
         console.error('Error uploading audio:', error);
       } finally {
-        recordButton.textContent = 'Record';
+        recordButton.textContent = 'Record  ';
         recordButton.disabled = false;
         stream.getTracks().forEach(track => track.stop());
       }
     };
 
     mediaRecorder.start();
-   
 
   } catch (error) {
     let msg = document.getElementById('error')
@@ -77,7 +75,6 @@ async function startRecording() {
 }
 
 
+recordButton.addEventListener('click', startRecording)
 
-
-recordButton.addEventListener('click', startRecording);
   
